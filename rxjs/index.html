@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button style="width:200px; height:40px; border-radius:10px; font-size: 15px;">click</button>
+
+    <script src="https://unpkg.com/@reactivex/rxjs@6.5.2/dist/global/rxjs.umd.js"></script>
+    <script>
+
+        // let observable = new Observable((subs)=>{
+        //     subs.next(1);
+        //     subs.next(2);
+        //     subs.next(3);
+        //     setTimeout(()=>{
+        //         subs.next(4);
+        //         subs.complete();
+        //     },1000)
+        // })
+
+        console.log(rxjs);
+        console.log(rxjs.Observable);
+        console.log();
+        let button = document.querySelector('button');
+        console.log(button);
+        
+
+        rxjs.fromEvent(button,'click').pipe((event)=>{
+            event
+        }).subscribe((event)=>{
+            console.log(event);
+            console.log(event.clientX, event.clientY);
+            console.log(event.offsetX, event.offsetY);
+        });
+
+    </script>
+</body>
+</html>
